@@ -1,0 +1,40 @@
+{
+  "name": "bankapp",
+  "version": "1.0.0",
+  "description": "bankApp",
+  "main": "./dist/bin/www.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "babel ./src --out-dir dist",
+    "build": "npm-run-all clean transpile ",
+    "clean": "rimraf dist",
+    "start": "node ./dist/bin/www.js",
+    "dev": "nodemon npm-run-all build start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jude92/bank-API.git"
+  },
+  "author": "dadinwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jude92/bank-API/issues"
+  },
+  "homepage": "https://github.com/jude92/bank-API#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "express": "^4.18.1",
+    "helmet": "^6.0.0",
+    "joi": "^17.6.0",
+    "mongoose": "^6.6.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.19.0",
+    "nodemon": "^2.0.19",
+    "rimraf": "^3.0.2"
+  }
+}
