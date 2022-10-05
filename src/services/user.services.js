@@ -16,8 +16,6 @@ export const createUser = async (datas = {}) => {
     await useUser.save();
     return true;
   } catch (err) {
-    console.log(err);
-
     throw new Error("user creation unsuccessful");
   }
 };

@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
   try {
     await createUser(req.body);
-    res.status(201).send("user creation successful");
+    res.status(201).send("successfully posted");
   } catch (error) {
     return res.status(500).send(error);
   }
