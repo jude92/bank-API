@@ -13,7 +13,7 @@ const AccountSchema = Schema(
     },
     accountType: {
       type: String,
-      enum: ["current", "saving"],
+      enum: ["current", "savings"],
       default: "saving",
     },
   },
