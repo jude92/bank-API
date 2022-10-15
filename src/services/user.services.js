@@ -1,8 +1,7 @@
 import user from "../schemas/userSchema";
 import * as bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-const jwt_secrete_key = "my key";
-
+import keys from "../keys";
 /**
  *
  * @param {{fName : string, lName : string, mail :
@@ -37,7 +36,7 @@ export const login = async ({ email, password }, res) => {
   if (!isCorrectPassword) {
     res.status(400).json({ message: "invalid email / password" });
   }
-  const token = jwt.decode({ id: existingUser.id }, jwt_secrete_key, {
+  const token = jwt.sign({ id: existingUser.id }, keys.auth.JWT_KEY, {
     expiresIn: "3hr",
   });
   const userToReturn = existingUser.toJSON();

@@ -5,7 +5,8 @@ import router from "./routes";
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(router);
+// app.use(router);
+router(app);
 
 /**
  * @Todo handle error logging properly later

@@ -38,6 +38,7 @@ router.put("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
+  console.log("request check after authentication ", req.app.locals);
   const result = await accountFileHelper.findById(req.params.id);
   res.send(result);
 });
